@@ -1,0 +1,209 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={REPOS},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{REPOS}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{true}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{15 March, 2019}
+
+\usepackage{lscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\begin{itemize}
+\tightlist
+\item
+  TBC
+\end{itemize}
+\end{abstract}
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\newpage
+
+\protect\hyperlink{Top}{Top}
+
+\newpage
+
+\section{Markdown Cheatsheet}\label{markdown-cheatsheet}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  Markdown Cheatsheet
+
+  \begin{itemize}
+  \item
+    Links
+
+    \includegraphics{IMG/Calvin.jpg}\\
+    \includegraphics{IMG/Calvin.jpg}\\
+    Hi, I am Calvin.
+  \item
+    1.2
+  \end{itemize}
+\end{itemize}
+
+\protect\hyperlink{Top}{Top}
+
+\section{Session information}\label{session-information}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\blandscape
+
+\begin{verbatim}
+## R version 3.5.2 (2018-12-20)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS High Sierra 10.13.6
+## 
+## Matrix products: default
+## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats4    grid      stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] dbscan_1.1-3.1        flexclust_1.4-0       modeltools_0.2-22    
+##  [4] lattice_0.20-38       dynamicTreeCut_1.63-1 NbClust_3.0          
+##  [7] pvclust_2.0-0         dendextend_1.10.0     ggdendro_0.1-20      
+## [10] factoextra_1.0.5.999  ade4_1.7-13           processx_3.2.1       
+## [13] plotly_4.8.0.9000     RColorBrewer_1.1-2    gridExtra_2.3        
+## [16] ggpubr_0.2.999        magrittr_1.5.0.9000   ggrepel_0.8.0.9000   
+## [19] wcLibraryR_0.0.1      captioner_2.2.3.9000  dplyr_0.8.0          
+## [22] ggplot2_3.1.0.9000    png_0.1-7             kableExtra_0.9.0     
+## [25] knitr_1.21           
+## 
+## loaded via a namespace (and not attached):
+##  [1] viridis_0.5.1       httr_1.4.0          tidyr_0.8.2.9000   
+##  [4] jsonlite_1.6        viridisLite_0.3.0   assertthat_0.2.0   
+##  [7] yaml_2.2.0          robustbase_0.93-3   pillar_1.3.1       
+## [10] glue_1.3.0          digest_0.6.18       rvest_0.3.2        
+## [13] colorspace_1.4-0    htmltools_0.3.6     pkgconfig_2.0.2    
+## [16] purrr_0.3.0         mvtnorm_1.0-8       scales_1.0.0       
+## [19] whisker_0.3-2       tibble_2.0.1.9001   withr_2.1.2        
+## [22] nnet_7.3-12         lazyeval_0.2.1      crayon_1.3.4       
+## [25] mclust_5.4.2        evaluate_0.13       ps_1.3.0           
+## [28] MASS_7.3-51.1       xml2_1.2.0          class_7.3-14       
+## [31] tools_3.5.2         data.table_1.12.0   hms_0.4.2          
+## [34] trimcluster_0.1-2.1 stringr_1.4.0       kernlab_0.9-27     
+## [37] munsell_0.5.0       cluster_2.0.7-1     fpc_2.1-11.1       
+## [40] compiler_3.5.2      rlang_0.3.1         rstudioapi_0.9.0   
+## [43] htmlwidgets_1.3     rmarkdown_1.11      gtable_0.2.0       
+## [46] flexmix_2.3-15      R6_2.4.0            prabclus_2.2-7     
+## [49] readr_1.2.1         stringi_1.3.1       parallel_3.5.2     
+## [52] Rcpp_1.0.0          DEoptimR_1.0-8      tidyselect_0.2.5   
+## [55] xfun_0.5            diptest_0.75-7
+\end{verbatim}
+
+\elandscape
+
+\protect\hyperlink{Top}{Top}
+
+\section{Reference}\label{reference}
+
+
+\end{document}

@@ -1,0 +1,110 @@
+---
+title: "REPOS"
+author:
+  - name: Wenching Calvin Chan, Ph.D.  
+    affiliation: Center for Research Informatics, University of Chicago, Chicago, IL 60637  
+    email: wchan10@bsd.uchicago.edu  
+date: "`r format(Sys.time(), '%d %B, %Y')`"  
+package: "REPOS"  
+abstract: >
+  - TBC
+output:
+  # pdf_document:
+  #   highlight: tango
+  #   number_sections: true
+  #   df_print: kable # default, kable, tibble
+  #   toc: true
+  #   toc_depth: 3
+  #   latex_engine: xelatex
+  #   keep_tex: yes
+  #   includes:
+  #     in_header: header.tex
+  
+  html_document:
+    theme: united
+    highlight: tango
+    number_sections: true
+    df_print: paged
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+    keep_md: true
+bibliography: REPOS.bib
+always_allow_html: yes
+vignette: >
+  %\VignetteIndexEntry{REPOS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE, results='hide', echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("knitr")
+library("kableExtra")
+library("png")
+library("grid")
+library("ggplot2")
+library("dplyr")
+library("captioner")
+
+library("wcLibraryR")
+
+loadClusteringLibs()
+
+fig_nums <- captioner::captioner()
+table_nums <- captioner::captioner(prefix = "Table")
+```
+
+<a name="Top"/>
+
+
+\newpage
+
+
+[Top](#Top)
+
+\newpage
+
+
+
+# Markdown Cheatsheet
+
+***
+
+* Markdown Cheatsheet
+    * Links
+        
+        ![Calvin][Calvin]  
+        ![Inline-style image with title](IMG/Calvin.jpg "Calvin")  
+        Hi, I am Calvin.  
+        
+    * 1.2
+
+
+
+[Top](#Top)
+
+
+[Calvin]: IMG/Calvin.jpg  
+
+
+# Session information
+
+***
+
+\blandscape
+```{r sessioninfo, echo = FALSE}
+print(sessionInfo())
+```  
+\elandscape
+
+
+[Top](#Top)
+
+
+
+# Reference  
+
+
