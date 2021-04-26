@@ -11,7 +11,7 @@ echo "### YOU MIGHT WANT TO ADD LARGE FILE(S) AS REPOS SPECIFIC EXCLUSIONS ###"
 eval_cmd="find * -size +5M"
 if [[ $disable_large_file_test == false ]] && [[ $(eval $eval_cmd) ]]; then
 	echo "LARGE FILE DETECTED!!!";
-	eval "$eval_cmd -print0 | sort -V | xargs -0 ls -Shal"
+	eval "$eval_cmd -print0 | xargs -0 ls -Shal"
 	echo "$eval_cmd | sort -V  >> .gitignore"
 	exit 1; 
 fi
