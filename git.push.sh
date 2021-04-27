@@ -7,12 +7,14 @@ for file in `find . -type f -name '.DS_Store' -print`; do echo $file; rm $file; 
 for file in `find . -name '.Rhistory' -print`; do echo $file; rm -rf $file; done
 
 
-echo "### YOU MIGHT WANT TO ADD LARGE FILE(S) AS REPOS SPECIFIC EXCLUSIONS ###"
 eval_cmd="find * -size +5M"
 if [[ $disable_large_file_test == false ]] && [[ $(eval $eval_cmd) ]]; then
-	echo "LARGE FILE DETECTED!!!";
+	echo "### LARGE FILE DETECTED!!! ###";
+	echo "### YOU MIGHT WANT TO ADD LARGE FILE(S) AS REPOS SPECIFIC EXCLUSIONS ###"
+	echo
 	eval "$eval_cmd -print0 | xargs -0 ls -Shal"
-	echo "$eval_cmd | sort -V  >> .gitignore"
+	echo
+	echo "$eval_cmd | sort -V >> .gitignore; bash $0 true"
 	exit 1; 
 fi
 echo
