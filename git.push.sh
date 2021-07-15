@@ -23,7 +23,7 @@ echo
 echo "### ADD THE LATEST CONTENT TO THE REPOS ###"
 git status
 echo "--- --- --- --- --- ---"
-git add .
+git add --all
 echo "--- --- --- --- --- ---"
 git status
 echo
@@ -35,7 +35,7 @@ git commit -m "$timeStamp"
 echo
 
 echo "### IF EVERYTHING GOES WELL, THEN PUSH THE COMMIT ###"
-echo "git push origin master"
+echo "git push -u origin master"
 echo
 
 echo "### OR, FIX ANY ERRORS AND STARTS AGAIN ###"
