@@ -36,6 +36,7 @@ echo
 
 echo "### IF EVERYTHING GOES WELL, THEN PUSH THE COMMIT ###"
 echo "git push -u origin master"
+# echo "git push -u origin master" # Branch 'master' set up to track remote branch 'master' from 'origin'.
 echo
 
 echo "### OR, FIX ANY ERRORS AND STARTS AGAIN ###"
