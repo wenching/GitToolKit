@@ -2,9 +2,9 @@
 
 disable_large_file_test="${1:-false}"
 
-for file in `find . -type f -name '._*' -print`; do echo $file; rm $file; done
-for file in `find . -type f -name '.DS_Store' -print`; do echo $file; rm $file; done
-for file in `find . -name '.Rhistory' -print`; do echo $file; rm -rf $file; done
+for file in $(find . -type f -name '._*' -print); do echo $file; rm $file; done
+for file in $(find . -type f -name '.DS_Store' -print); do echo $file; rm $file; done
+for file in $(find . -name '.Rhistory' -print); do echo $file; rm -rf $file; done
 
 
 eval_cmd="find * -size +5M"
@@ -35,8 +35,8 @@ git commit -m "$timeStamp"
 echo
 
 echo "### IF EVERYTHING GOES WELL, THEN PUSH THE COMMIT ###"
-echo "git push origin master"
-# echo "git push -u origin master" # Branch 'master' set up to track remote branch 'master' from 'origin'.
+echo "git push origin $(git rev-parse --abbrev-ref HEAD)"
+# echo "git push -u origin $(git rev-parse --abbrev-ref HEAD)" # Branch 'CURRENT_BRANCH' set up to track remote branch 'CURRENT_BRANCH' from 'origin'.
 echo
 
 echo "### OR, FIX ANY ERRORS AND STARTS AGAIN ###"
