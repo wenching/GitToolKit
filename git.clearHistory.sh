@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-for file in `find . -type f -name '._*' -print`; do echo $file; rm $file; done
-for file in `find . -type f -name '.DS_Store' -print`; do echo $file; rm $file; done
-for file in `find . -name '.Rhistory' -print`; do echo $file; rm -rf $file; done
+for file in $(find . -type f -name '._*' -print); do echo $file; rm $file; done
+for file in $(find . -type f -name '.DS_Store' -print); do echo $file; rm $file; done
+for file in $(find . -name '.Rhistory' -print); do echo $file; rm -rf $file; done
 
 # https://gist.github.com/stephenhardy/5470814
 
