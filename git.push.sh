@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 disable_large_file_test="${1:-false}"
 

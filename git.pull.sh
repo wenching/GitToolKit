@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+echo "### SHOW THE CURRENT BRANCH ###"
+git rev-parse --abbrev-ref HEAD
+echo
+
 echo "### LIST OF REMOTES FOR A GIT REPOS ###"
 git remote -v
 echo
