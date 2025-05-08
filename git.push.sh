@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 disable_large_file_test="${1:-false}"
+msg=${2-"$(git rev-parse --abbrev-ref HEAD): $(date +'%Y%m%dT%H%M%S')"}
 
 for file in $(find . -type f -name '._*' -print); do echo $file; rm $file; done
 for file in $(find . -type f -name '.DS_Store' -print); do echo $file; rm $file; done
@@ -29,9 +30,7 @@ git status
 echo
 
 echo "### ADD A DEFAULT COMMIT WITH TIMESTAMP ###"
-timeStamp=$(date)
-echo $timeStamp
-git commit -m "$timeStamp"
+git commit -m "$msg"
 echo
 
 echo "### IF EVERYTHING GOES WELL, THEN PUSH THE COMMIT ###"
